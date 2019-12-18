@@ -6,6 +6,7 @@ import logic.*;
 
 public class AI {
 
+    // создам подобие простенького AI который будет имитировать соперника
     public Field field;
     public AIBase action;
     public Random rand;

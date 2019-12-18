@@ -2,6 +2,7 @@ package ai;
 
 abstract public class AIBase {
 
+    // абстрактынй класс, описывает выстрел (ход) противника ( тое сть AI)
     protected AI ai;
     protected int x;
     protected int y;

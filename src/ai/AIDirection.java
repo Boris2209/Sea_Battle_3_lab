@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import logic.*;
 
 public class AIDirection extends AIBase {
-
+    // анализ клеток
     public AIDirection(AI ai) {
         super(ai);
     }

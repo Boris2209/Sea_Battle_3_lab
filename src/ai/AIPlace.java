@@ -5,6 +5,7 @@ import logic.*;
 
 public class AIPlace extends AIBase {
 
+    // делает выстрел, пытаясь "предугадать" расположение корабля по ропненным клеткам
     public AIPlace(AI ai) {
         super(ai);
     }

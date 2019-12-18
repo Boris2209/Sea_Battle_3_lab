@@ -10,6 +10,7 @@ public class AIRandom extends AIBase {
         super(ai);
     }
 
+    // выбиарет клетку для удара
     public int doShot() {
         ArrayList<Cell> list = new ArrayList<Cell>();
         for (int j = 0; j < ai.getField().getWidth(); j++) {
