@@ -1,7 +1,7 @@
 package logic;
 
 public abstract class PlaceShip {
-
+    // сдедал абстрактный класс располоджения корабля на поле (прсото что бы наследовать от него 2 других класса)
     public Field field;
 
     public PlaceShip(Ship ship) {

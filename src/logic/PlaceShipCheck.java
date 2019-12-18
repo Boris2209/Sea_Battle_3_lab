@@ -6,6 +6,7 @@ public class PlaceShipCheck extends PlaceShip {
         super(ship);
     }
 
+    // проверка размещения
     @Override
     public boolean setShip(int x, int y) {
         if ( getField().isBound(x, y) ) {

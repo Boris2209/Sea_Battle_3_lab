@@ -23,6 +23,7 @@ public class Ship {
     private ArrayList<Cell> listCells;  //список клеток, которые занимает корабль
     private ArrayList<Cell> listBorders;    // списко пограничных клеток (вокруг корабля)
 
+    // работа методов очевина:
     public ArrayList<Cell> getListCells() {
         return listCells;
     }
@@ -31,6 +32,7 @@ public class Ship {
         return listBorders;
     }
 
+    // в этом методе создается корабль, клетки добавляются в нужный список
     public Ship(Field field, int size) {
         this.size = size;
         this.health = size;
@@ -48,6 +50,7 @@ public class Ship {
         getField().setNumLiveShips(getField().getNumLiveShips() + 1);
     }
 
+    // рандомное размещение кораблей
     private void getPlace() {
         Random rand = new Random();
         this.x = rand.nextInt(getField().getWidth());
@@ -61,18 +64,19 @@ public class Ship {
         }
     }
 
+    // обход проверка клеток корабля и его окружения
     private boolean byPass(PlaceShip tp) {
         int i, m, n;
 
         for(i = 0; i < size; i++) {
-            // êîðàáëü
+
             m = y + i * dy;
             n = x + i * dx;
             if (! tp.setShip(m, n) ) {
                 return false;
             }
 
-            // ïëîùàäêà ñâåðõó è ñíèçó êîðàáëÿ
+
             m = y + i * dy - dx;
             n = x + i * dx - dy;
             if (! tp.setBorder(m, n) ) {
@@ -84,7 +88,7 @@ public class Ship {
                 return false;
             }
         }
-        // ïëîùàäêà ñëåâà è ñïðàâà êîðàáëÿ
+
         for(i = -1; i < 2; i++) {
             m = y + i * dx - dy;
             n = x + i * dy - dx;
@@ -108,6 +112,7 @@ public class Ship {
         byPass(new PlaceShipSet(this));
     }
 
+    // важный метод, вызывается в случае попадания в корабль и изменяет его параметры
     public int doShot() {
         if (health != 0) {
             health--;
@@ -129,6 +134,7 @@ public class Ship {
         return Field.SHUT_INJURED;
     }
 
+    // следующе методы тоже крайне очевидны
     public int getSize() {
         return size;
     }

@@ -9,6 +9,7 @@ public class PlaceShipSet extends PlaceShip {
         this.ship = ship;
     }
 
+    // переопределяю методы абстрактоно класса. Проверка можно ли занимать эти клетки
     @Override
     public boolean setShip(int x, int y) {
         getField().getCell(x, y).setState(Cell.CELL_WELL);
