@@ -7,6 +7,7 @@ import logic.*;
 
 public class ScoreField extends JPanel implements ISubscriber {
 
+    // третье поле отображает результат игры и текущее состояние (количество кораблей, подбитых\неподбитызх палуб)
     private GameModel model;
 
     public ScoreField(GameModel model) {

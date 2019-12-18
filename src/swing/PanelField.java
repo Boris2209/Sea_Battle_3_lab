@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 import logic.*;
 
 abstract public class PanelField extends JPanel implements ISubscriber {
+    // класс для реализации игрового поля (абстрактный, от которог опотом наследую поле игрока и противника)
     private Field field;
 
     public Field getField() {

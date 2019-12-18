@@ -6,6 +6,7 @@ import logic.*;
 
 public class PanelFieldPlayer extends PanelField {
 
+    // поле игрока
     public PanelFieldPlayer(Field field) {
         super(field);
     }

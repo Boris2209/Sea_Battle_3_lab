@@ -6,14 +6,16 @@ import java.util.Iterator;
 import ai.AI;
 import logic.*;
 
-/**
- * Ïðåäñòàâëåíèå ãëàâíîãî îêíà
- */
+
 public class GameModel {
+    // будет список слушателей (заполняется в зависимости от настроек игрового поля)
     private ArrayList<ISubscriber> listeners = new ArrayList<ISubscriber>();
+    // инициализирую два поля: игрок и соперник
     public Field playerFieldPlayer;
     public Field playerFieldOpponent;
+    // инициализирую соперника
     public AI ai;
+    // ирока
     public int currentPlayer;
     private boolean enableShot;
 
@@ -37,9 +39,7 @@ public class GameModel {
         updateSubscribers();
     }
 
-    /**
-     * Ðàññòàâëåíèå êîðàáëåé çàíîâî
-     */
+
     public void newGame() {
         playerFieldPlayer.setShip();
         playerFieldOpponent.setShip();
@@ -48,24 +48,21 @@ public class GameModel {
         updateSubscribers();
     }
 
-    /**
-     * Âûñòðåë ïî òåêóùåìó èãðîêó
-     */
+
     public void doShotByOpponent(int x, int y) {
         if (!enableShot) {
             return;
         }
-        // åñëè õîäèò ëîêàëüíûé èãðîê
+
         if (currentPlayer == 0) {
             if (playerFieldOpponent.getCell(x, y).isMark()) {
                 return;
             }
             if (playerFieldOpponent.doShot(x, y) == Field.SHUT_MISSED) {
-                // åñëè ïðîìàõíóëèñü
                 currentPlayer = 1;
             }
         }
-        // åñëè õîäèò ïðîòèâíèê
+
         if (currentPlayer ==1) {
             while (ai.doShot() != Field.SHUT_MISSED);
             currentPlayer = 0;

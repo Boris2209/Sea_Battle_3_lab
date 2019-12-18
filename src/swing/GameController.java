@@ -4,9 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 
-/**
- * Êîíòðîëëåð ãëàâíîãî îêíà
- */
 public class GameController implements ActionListener {
 
     public GameModel model;
@@ -17,9 +14,7 @@ public class GameController implements ActionListener {
         this.model = model;
     }
 
-    /**
-     * îáðàáîò÷èê âûáîðà ìåíþ
-     */
+    // выбирается настройка поля игры
     @Override
     public void actionPerformed(ActionEvent e) {
         String cmd = e.getActionCommand();
@@ -61,6 +56,7 @@ public class GameController implements ActionListener {
         }
     }
 
+    // работа мышкой
     public void mousePressed(MouseEvent arg0) {
         PanelField field =  view.panelPlayerOpponent;
         int x = arg0.getX() / (field.getWidth() / field.getField().getWidth());

@@ -12,6 +12,10 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
 public class GameView extends JFrame {
+
+    // настройки внешнего вида
+
+
     private GameModel model;
     private GameController controller;
 
@@ -37,9 +41,7 @@ public class GameView extends JFrame {
         attachController();
     }
 
-    /**
-     * îáíîâëÿåì äàííûå íà ôîðìå
-     */
+
     public void update() {
         panelPlayerPlayer.repaint();
         panelPlayerOpponent.repaint();
@@ -47,9 +49,7 @@ public class GameView extends JFrame {
         System.out.println("view update");
     }
 
-    /**
-     * äîáàâëåíèå ñëóøàòåëåé ôîðìû è íàïðàâëÿåì èõ íà êîíòðîëëåð
-     */
+
     public void attachController() {
         mntmAbout.addActionListener(controller);
         mntmNewGame.addActionListener(controller);
@@ -66,9 +66,7 @@ public class GameView extends JFrame {
         });
     }
 
-    /**
-     * ïîñòðîåíèå èíòåðôåéñà ïîëüçîâàòåëÿ
-     */
+
     private void buildUI() {
         this.setTitle("SeaBattle");
         this.setResizable(false);
@@ -128,6 +126,5 @@ public class GameView extends JFrame {
         mntmAbout = new JMenuItem("About");
         mnHelp.add(mntmAbout);
     }
-
 
 }

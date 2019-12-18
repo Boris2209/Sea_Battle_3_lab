@@ -6,10 +6,12 @@ import logic.*;
 
 public class PanelFieldOpponent extends PanelField {
 
+    // поле противника
     public PanelFieldOpponent(Field field) {
         super(field);
     }
 
+    // переменные состояния так же пригодились для отрисовки клеток
     protected Color getColorByStateElement(int state) {
         switch (state) {
             case Cell.CELL_BORDER:
